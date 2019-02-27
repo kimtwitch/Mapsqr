@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>MAP2 Paper</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    
+<!-- Mapbox Studio -->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.js'></script>
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.css' type='text/css' />
+        
+
+<!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script><!-- jQuery -->
+    <script src="../js/jquery-ui.min.js"></script>
+    
+    
+<!-- Google fonts -->
+<link href="https://fonts.googleapis.com/css?family=Istok+Web:400,700|Montserrat:700" rel="stylesheet">
+    
+<!-- less for developing -->
+		<link rel="stylesheet/less" type="text/css" href="../less/stylesheet_mapsqr.less" />
+		<script type="text/javascript" src="../less/less.js" ></script>
+<!-- less for developing -->
+</head>
+<body>
+    <div class="maptools">
+        <div class="tabs">
+            <ul id="maptool_tabs">
+                <li class="current_tab" id="tab_mapinfo"><div></div><div class="icon-mapinfo"></div><span>Map Info</span></li>
+                <li id="tab_destinations"><div></div><div class="icon-destinations"></div><span>Destinations</span></li>
+                <li id="tab_transportation"><div></div><div class="icon-transportation"></div><span>Transportations</span></li>
+                <li id="tab_mapstyle"><div></div><div class="icon-mapstyle"></div><span>Map Style</span></li>
+                <li id="tab_mapsave"><div></div><div class="icon-mapsave"></div><span>Save Map</span></li>
+                <li id="tab_mapbook"><div></div><div class="icon-mapbook"></div><span>Map Books</span></li>
+            </ul>
+        </div>
+        <div class="tool_contents" id="tool_contents">
+            <div class="current_tool" id='tool_mapinfo'>
+                <h3>Map Info</h3>
+                <label for="maptitle">Map Title</label><br/>
+                <input type="text" id="maptitle" placeholder="My New Map">
+                <hr/>
+                <label for="mapsize_x">Map Size</label><br/>
+                <span><input id="mapsize_x" type="number" placeholder="400"> px</span> x <span><input id="mapsize_y" type="number" placeholder="300"> px</span>
+            </div>
+            <div id='tool_destinations'>
+                <h3>Destinations</h3>
+                <p class="tempp">Add new destinations by search</p>
+                <hr/>
+            </div>
+            <div id='tool_transportation'>
+                <h3>Transportations</h3>
+            </div>
+            <div id='tool_mapstyle'>
+                <h3>Map Styles</h3>
+            </div>
+            <div id='tool_mapsave'>
+                <h3>Save Map</h3>
+                <a id="savepng" download="my-new-map.png" target="_blank" href="#">Save as PNG</a>
+            </div>
+            <div id='tool_mapbook'>
+                <h3>Map Books</h3>
+            </div>
+        </div>
+    </div>
+    <div class="mapcontainer">
+        <div id="top_btns">
+            <div id="btn_movetool"><div class="icon-move"></div></div>
+            <div id="btn_eraser"><div class="icon-eraseer"></div></div>
+            <div id="btn_draw"><div class="icon-draw"></div></div>
+        </div>
+        <div id="map"></div>
+        <div id="bottom_btns">
+            <div id="btn_add"><div class="icon-add"></div></div>
+        </div>
+    </div>
+
+<script type="text/javascript" src="js/mapsqr_scripts.js"></script>
+<script type="text/javascript" src="js/html2canvas.js"></script>
+<script type="text/javascript" src="js/html2canvas.svg.js"></script>
+<script>
+    //Mapbox Script
+mapboxgl.accessToken = 'pk.eyJ1IjoibWFwc3FyIiwiYSI6ImNpejFlcW0wbjAyYXUyd21uZTkxeXB2dm8ifQ.wWKXM3HIc_Ea1piL8JgoIQ';
+var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/mapsqr/ciz1estnc00122rnr17y5dolc', //hosted style id
+    center: [-77.38, 39], // starting position
+    zoom: 3, // starting zoom
+    width: 500
+});
+    
+var geocoder = new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken,
+    container: 'searchbox'
+});
+
+map.addControl(geocoder);
+    
+// After the map style has loaded on the page, add a source layer and default
+// styling for a single point.
+map.on('load', function() {
+    map.addSource('single-point', {
+        "type": "geojson",
+        "data": {
+            "type": "FeatureCollection",
+            "features": []
+        }
+    });
+
+    map.addLayer({
+        "id": "point",
+        "source": "single-point",
+        "type": "circle",
+        "paint": {
+            "circle-radius": 8,
+            "circle-color": "#b3b3b3"
+        }
+    });
+
+    // Listen for the `geocoder.input` event that is triggered when a user
+    // makes a selection and add a symbol that matches the result.
+    geocoder.on('result', function(ev) {
+        map.getSource('single-point').setData(ev.result.geometry);
+    });
+});
+    //end of Mapbox Script
+</script>
+
+</body>
+</html>

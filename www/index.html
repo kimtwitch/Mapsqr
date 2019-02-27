@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Developed by Soobin Kim / madrat.co -->
+
+<!--[if lt IE 9]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="css/my_style_ie.css">
+<![endif]-->
+
+<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+Remove this if you use the .htaccess -->
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>MAP2 | Tour Map Solution</title>
+		<meta name="description" content="Create and manage tour maps">
+		<meta name="author" content="MAP2 Team">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+		
+		<!-- links -->
+<!-- reset & normalize -->
+<link rel="stylesheet" type="text/css" href="css/normalize.css" media="all">
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<!-- Modernizr-->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
+<!-- jQuery -->
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script><!-- jQuery -->
+<script src="js/jquery-ui.min.js"></script>
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<!-- font awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!-- prefix free -->
+<script src="js/prefixfree.min.js"></script>
+
+<!-- Google fonts -->
+<link href="https://fonts.googleapis.com/css?family=Istok+Web:400,700|Montserrat:700" rel="stylesheet">
+		
+		
+<!-- less for developing -->
+		<link rel="stylesheet/less" type="text/css" href="less/stylesheet.less" />
+		<script type="text/javascript" src="less/less.js" ></script>
+<!-- less for developing -->
+        
+<!-- original links -->
+<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+	<!-- IE 10+ CSS -->
+	<link rel="stylesheet" type="text/css" href="css/my_style_ie.css" media="screen and (-ms-high-contrast: active), (-ms-high-contrast: none)"> 
+		
+	</head>
+
+	<body>
+<!-- Skip link -->
+<a href="#main_section">Skip to the main content</a>
+        
+<!-- Container -->
+<div class="container">
+    <!-- Main Header -->
+    <header class="main_header">
+        <h1><a href="http://mapsqr.com">MAP<sup>2</sup></a></h1>
+        <nav id="main_nav" class="main_nav">
+            <h2 class="hide">Main Navigation</h2>
+            <div id="main_nav_btn" class="main_nav_btn"><div></div></div>
+            <ul>
+                <li><a class="current_pg" href="#main">About MAP<sup>2</sup></a></li>
+                <li><a href="contact.html">Contact our team</a></li>
+                <li id="enter_mapqt"><a>Enter MAP<sup>2</sup></a><span><i class="fa fa-exclamation-triangle fa-2x fa-fw"></i><br/>MAP<sup>2</sup> is under construction!</span></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- END Main Header -->
+    
+    <!-- Main sections -->
+    <section class="main" id="main">
+        <h2 class="hide">Main Section</h2>
+        <div class="headliner">
+            <div>
+            <h3>Tour Maps,<br/>Made Easy for You</h3>
+            <p>Create any tour map in minutes</p>
+            <a id="main_cta" href="#signup">Stay in Line for the Updates</a>
+            </div>
+        </div>
+
+        <section class="main_about">
+            <article class="main_about_mapsq">
+                <img src="imgs/MAP2-logo-col.svg">
+                <h3 class="hide">What is MAP<sup>2</sup>?</h3>
+                <p>Hello! We are <strong>MAP<sup>2</sup></strong>, and we're a <strong>tour map solution company</strong>. We help you to create easily customizable tour maps and manage them without hassle.</p>
+            </article>
+            <article class="main_about_how">
+                <h3>How MAP<sup>2</sup> works</h3>
+                <ul>
+                    <li>
+                        <img src="imgs/how-1.svg">
+                        <h4>Points of Interest - Destinations</h4>
+                        <p>Start the map creation by adding the destinations. Search the name of city, then MAP<sup>2</sup> system will find and place a marker on the correct location and name of the city. You can mark different types of destinations - staying in hotel or maybe just a visit.</p>
+                    </li>
+                    <li>
+                        <img src="imgs/how-2.svg">
+                        <h4>Connect the Dots - Transportations</h4>
+                        <p>How the travelers transport from one city to another? Use various types of lines to differenciate each transportation.</p>
+                    </li>
+                    <li>
+                        <img src="imgs/how-3.svg">
+                        <h4>Make It Yours - Customizing</h4>
+                        <p>Change colors of the map, shapes of markers, style of transportation lines - Anything you need to change to make the map yours. Try our goodlooking style presets!</p>
+                    </li>
+                    <li>
+                        <img src="imgs/how-4.svg">
+                        <h4>The Map is Ready! - Export</h4>
+                        <p>The map is ready to use! You can export the map as interactive map to include on your website, or export the map as JPG for simple display of map on a website or to include in a printing copy.</p>
+                    </li>
+                    <li>
+                        <img src="imgs/how-5.svg">
+                        <h4>Real-time Map Updates</h4>
+                        <p>When there is only a couple of changes needed to be made on the map, it can be a pain in the square to find and replace the old map. When you export the map's URL(instead of downloading as image), the map will be automatically updated when you make changes on a map.</p>
+                    </li>
+                </ul>
+            </article>
+            <article class="main_about_who">
+                <h3>Who needs MAP<sup>2</sup>?</h3>
+                <ul>
+                    <li>
+                        <img src="imgs/who-1.svg">
+                        <h4>Individual Travel Agent</h4>
+                        <p>Create tour map for each customized tour, fast and easily. No design progamming skill needed!</p>
+                    </li>
+                    <li>
+                        <img src="imgs/who-2.svg">
+                        <h4>Travel Agency</h4>
+                        <p>Create tour map for pre-made tour packages. Brand the maps with easy-customizing</p>
+                    </li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="signup" id="signup">
+            <div>
+                <img src="imgs/newsletter.svg">
+                <h2>Be On Board &amp; Get Our Newsletters!</h2>
+                <p>Subscribe to our newsletter to be the first to hear from us about product updates and exciting offers. We  will only send you an email when we have an exciting news for you!</p>
+                
+                <!-- Begin MailChimp Signup Form -->
+                <div id="mc_embed_signup">
+                <form action="//mapsqr.us15.list-manage.com/subscribe/post?u=e6e2fb9115b32693d179f6b26&amp;id=ecf612ef44" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <div id="mc_embed_signup_scroll">
+
+                <div class="mc-field-group">
+                    <label for="mce-EMAIL">Your Email </label>
+                    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                    <input type="submit" value="Sign me up!" name="subscribe" id="mc-embedded-subscribe">
+                    <div id="mce-responses" class="clear">
+                        <div class="response" id="mce-error-response" style="display:none"></div>
+                        <div class="response" id="mce-success-response" style="display:none"></div>
+                    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups--><input type="text" name="b_e6e2fb9115b32693d179f6b26_ecf612ef44" tabindex="-1" value="" class="hide">
+                </div>
+                    </div>
+                </form>
+                </div>
+
+                <!--End mc_embed_signup-->
+            </div>
+        </section>
+        
+    </section>
+    <!-- END Main sections -->
+    
+    <!-- Main Footer -->
+    <footer class="mainfooter">
+        <h2 class="hide">Footer</h2>
+        <div>&copy; MAP<sup>2</sup> | 2017</div>
+    </footer>
+    <!-- END Main Footer -->
+</div>
+<!-- END Container -->
+        
+<!-- bottom scripts -->
+
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <!--border radius-->
+    <script>
+        $(function () {
+          var nua = navigator.userAgent;
+          var isAndroid = (nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua.indexOf('AppleWebKit') > -1 && nua.indexOf('Chrome') === -1);
+          if (isAndroid) {
+            $('select.form-control').removeClass('form-control').css('width', '100%');
+          };
+        });
+    </script>
+    <!--ie8 important-->
+    <script>
+     var s = document.createElement('div');
+    s.innerHTML = "<section></section>";
+    document.body.appendChild(s);
+     </script>
+     <script>
+    $("body").append("<section></section>");
+     </script>
+<!-- END bottom scripts -->
+	</body>
+</html>
